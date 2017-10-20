@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.PhacDoDieuTri" table="phac_do_dieu_tri" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maPhacDo" type="int">
+            <column name="ma_phac_do" />
+            <generator class="identity" />
+        </id>
+
+        <property name="maBenhAn" type="int">
+            <column name="ma_benh_an" />
+        </property>
+        <property name="tieuDe" type="string">
+            <column name="tieu_de" />
+        </property>
+        <property name="thoiGian" type="date">
+            <column name="thoi_gian" />
+        </property>
+        <property name="noiDung" type="string">
+            <column name="noi_dung" />
+        </property>
+        <property name="ngayTao" type="date">
+            <column name="ngay_tao" />
+        </property>
+        
+       	<property name="nhacNho" type="yes_no">
+            <column name="nhac_nho" />
+        </property>
+        <property name="maNguoiTao" type="int">
+            <column name="ma_nguoi_tao" />
+        </property>
+        
+    </class>
+</hibernate-mapping>  

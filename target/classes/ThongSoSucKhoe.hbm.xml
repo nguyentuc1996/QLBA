@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.ThongSoSucKhoe" table="thong_so_suc_khoe" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maBanGhi" type="int">
+            <column name="ma_ban_ghi" />
+            <generator class="identity" />
+        </id>
+
+        <property name="maBenhNhan" type="int">
+            <column name="ma_benh_nhan" />
+        </property>
+        <property name="mach" type="int">
+            <column name="mach" />
+        </property>
+        <property name="nhietDo" type="int">
+            <column name="nhiet_do" />
+        </property>
+        <property name="huyetAp" type="int">
+            <column name="huyet_ap" />
+        </property>
+        <property name="nhipTho" type="int">
+            <column name="nhip_tho" />
+        </property>
+        <property name="canNang" type="int">
+            <column name="can_nang" />
+        </property>
+       	<property name="ngay" type="date">
+            <column name="ngay" />
+        </property>
+    </class>
+</hibernate-mapping>  

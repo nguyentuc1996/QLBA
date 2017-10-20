@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.BacSiBenhNhan" table="bac_si_benh_nhan" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maBanGhi" type="int">
+            <column name="ma_ban_ghi" />
+            <generator class="identity" />
+        </id>
+
+        <property name="maBacSi" type="int">
+            <column name="ma_bac_si" />
+        </property>
+        <property name="maBenhNhan" type="int">
+            <column name="ma_benh_nhan" />
+        </property>
+        
+    </class>
+</hibernate-mapping>  

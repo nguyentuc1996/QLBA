@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.LinhVucKhamChua" table="linh_vuc_kham_chua" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maLinhVuc" type="int">
+            <column name="ma_linh_vuc" />
+            <generator class="identity" />
+        </id>
+
+        <property name="tenLinhVuc" type="int">
+            <column name="ten_linh_vuc" />
+        </property>
+        <property name="moTa" type="string">
+            <column name="mo_ta" />
+        </property>
+        
+    </class>
+</hibernate-mapping>  

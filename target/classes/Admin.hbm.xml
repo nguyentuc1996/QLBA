@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.Admin" table="admin" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maAdmin" type="int">
+            <column name="ma_admin" />
+            <generator class="identity" />
+        </id>
+        <property name="taiKhoan" type="string">
+            <column name="tai_khoan" />
+        </property>
+        <property name="matKhau" type="string">
+            <column name="mat_khau" />
+        </property>
+        <property name="hoTen" type="string">
+            <column name="ho_ten" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" />
+        </property>
+        <property name="soDienThoai" type="string">
+            <column name="so_dien_thoai" />
+        </property>
+        <property name="vaiTro" type="int">
+            <column name="vai_tro" />
+        </property>
+       
+    </class>
+</hibernate-mapping>  

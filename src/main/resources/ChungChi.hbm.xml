@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.ChungChi" table="chung_chi" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maChungChi" type="int">
+            <column name="ma_chung_chi" />
+            <generator class="identity" />
+        </id>
+
+        <property name="maBacSy" type="int">
+            <column name="ma_bac_si" />
+        </property>
+        <property name="tenChungChi" type="string">
+            <column name="ten_chung_chi" />
+        </property>
+        <property name="ngayNhan" type="date">
+            <column name="ngay_nhan" />
+        </property>
+        <property name="ngayHetHan" type="date">
+            <column name="ngay_het_han" />
+        </property>
+        <property name="moTa" type="string">
+            <column name="mo_ta" />
+        </property>
+       
+    </class>
+</hibernate-mapping>  

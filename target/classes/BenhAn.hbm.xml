@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.BenhAn" table="benh_an" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maBenhAn" type="int">
+            <column name="ma_benh_an" />
+            <generator class="identity" />
+        </id>
+
+        <property name="maBenhNhan" type="int">
+            <column name="ma_benh_nhan" />
+        </property>
+        <property name="maLinhVuc" type="int">
+            <column name="ma_linh_vuc" />
+        </property>
+        <property name="ngayKham" type="date">
+            <column name="ngay_kham" />
+        </property>
+        <property name="lyDoKham" type="string">
+            <column name="ly_do_di_kham" />
+        </property>
+        <property name="quaTrinhBenhLy" type="string">
+            <column name="qua_trinh_benh_ly" />
+        </property>
+        
+       	<property name="tienSuLienQuan" type="string">
+            <column name="tien_su_lien_quan" />
+        </property>
+        <property name="huongDieuTri" type="string">
+            <column name="huong_dieu_tri" />
+        </property>
+        <property name="tomTatBenhAn" type="string">
+            <column name="tom_tat_benh_an" />
+        </property>
+        <property name="khac" type="string">
+            <column name="khac" />
+        </property>
+        <property name="ngayTao" type="date">
+            <column name="ngay_tao" />
+        </property>
+        <property name="maNguoiTao" type="int">
+            <column name="ma_nguoi_tao" />
+        </property>
+        
+       
+    </class>
+</hibernate-mapping>  

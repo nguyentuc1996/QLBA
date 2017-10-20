@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/quan_ly_benh_an?useUnicode=true&amp;characterEncoding=UTF-8</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password"></property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">1</property>
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<mapping resource="Admin.hbm.xml" />
+		<mapping resource="BacSiBenhNhan.hbm.xml" />
+		<mapping resource="BacSi.hbm.xml" />
+		<mapping resource="BenhAn.hbm.xml" />
+		<mapping resource="BenhNhan.hbm.xml" />
+		<mapping resource="ChanDoan.hbm.xml" />
+		<mapping resource="ChungChi.hbm.xml" />
+		<mapping resource="LinhVucKhamChua.hbm.xml" />
+		<mapping resource="PhacDoDieuTri.hbm.xml" />
+		<mapping resource="ThongSoSucKhoe.hbm.xml" />
+		<mapping resource="TuVan.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>

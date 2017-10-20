@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>
+    <class name="entities.TuVan" table="tu_van" schema="dbo" catalog="quan_ly_benh_an" optimistic-lock="version">
+        <id name="maTuVan" type="int">
+            <column name="ma_tu_van" />
+            <generator class="identity" />
+        </id>
+        <property name="tieuDe" type="string">
+            <column name="tieu_de" />
+        </property>
+        <property name="cauHoi" type="string">
+            <column name="cau_hoi" />
+        </property>
+        <property name="traLoi" type="string">
+            <column name="tra_loi" />
+        </property>
+        <property name="thoiGian" type="date">
+            <column name="thoi_gian" />
+        </property>
+        <property name="maBenhNhan" type="int">
+            <column name="ma_benh_nhan" />
+        </property>
+        <property name="maBacSi" type="int">
+            <column name="ma_bac_si" />
+        </property>
+       
+    </class>
+</hibernate-mapping>  
