@@ -46,9 +46,6 @@
         <property name="namKinhNghiem" type="int">
             <column name="nam_kinh_nghiem" />
         </property>
-        <property name="vaiTro" type="int">
-            <column name="vai_tro" />
-        </property>
-       
+
     </class>
 </hibernate-mapping>  
