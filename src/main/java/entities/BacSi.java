@@ -30,11 +30,11 @@ public class BacSi {
     private String soCMND;
     private String queQuan;
     private int namKinhNghiem;
-    private int vaiTro;
+//    private int vaiTro;
     public BacSi() {
     }
 
-    public BacSi(int maBacSi, String taiKhoan, String matKhau, String hoTen, Date ngaySinh, int gioiTinh, String quocTich, String noiOHienTai, String email, String soDienThoai, String soCMND, String queQuan, int namKinhNghiem, int vaiTro) {
+    public BacSi(int maBacSi, String taiKhoan, String matKhau, String hoTen, Date ngaySinh, int gioiTinh, String quocTich, String noiOHienTai, String email, String soDienThoai, String soCMND, String queQuan, int namKinhNghiem) {
         this.maBacSi = maBacSi;
         this.taiKhoan = taiKhoan;
         this.matKhau = matKhau;
@@ -48,7 +48,7 @@ public class BacSi {
         this.soCMND = soCMND;
         this.queQuan = queQuan;
         this.namKinhNghiem = namKinhNghiem;
-        this.vaiTro = vaiTro;
+//        this.vaiTro = vaiTro;
     }
 
     public int getMaBacSi() {
@@ -156,13 +156,6 @@ public class BacSi {
         this.namKinhNghiem = namKinhNghiem;
     }
 
-	public int getVaiTro() {
-		return vaiTro;
-	}
-
-	public void setVaiTro(int vaiTro) {
-		this.vaiTro = vaiTro;
-	}
-    
+	
 
 }

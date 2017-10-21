@@ -51,6 +51,7 @@ public class Home {
 				return "login";
 			} else {
 				session.setAttribute("admin", admin);
+				session.setAttribute("vaitro", 3);
 				return "admin";
 			}
 		} else if (vaiTro.equalsIgnoreCase("bacSi")) {
@@ -59,6 +60,7 @@ public class Home {
 				return "login";
 			} else {
 				session.setAttribute("bacsi", bacSi);
+				session.setAttribute("vaitro", 2);
 				return "bacsi";
 			}
 		} else {
@@ -68,6 +70,7 @@ public class Home {
 				return "login";
 			} else {
 				session.setAttribute("benhNhan", benhNhan);
+				session.setAttribute("vaitro", 1);
 				return "benhnhan";
 			}
 		}
@@ -99,14 +102,14 @@ public class Home {
 		String soTheBHYT = request.getParameter("soTheBHYT");
 		String queQuan = request.getParameter("queQuan");
 		String ngheNghiep = request.getParameter("ngheNghiep");
-		String vaiTro= request.getParameter("vaiTro");
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		// surround below line with try catch block as below code throws checked
 		// exception
 		Date ngaySinh = sdf.parse(ngaySinhStr);
 		BenhNhan benhNhan = new BenhNhan(Integer.parseInt(maBenhNhan), taiKhoan, matKhau, hoTen, ngaySinh, 
 				Integer.parseInt(gioiTinh), quocTich, noiOHienTai, email, soDienThoai, soCMND, soTheBHYT, 
-				queQuan, ngheNghiep, Integer.parseInt(vaiTro));
+				queQuan, ngheNghiep);
 		benhNhanDAO.themBenhNhan(benhNhan);
 		HttpSession session = request.getSession();
 		session.setMaxInactiveInterval(900);// max thoi gian session la 900

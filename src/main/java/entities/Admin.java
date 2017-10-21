@@ -25,15 +25,15 @@ public class Admin {
     private String hoTen;
     private String email;
     private String soDienThoai;
-    private int vaiTro;
-    public Admin(int maAdmin, String taiKhoan, String matKhau, String hoTen, String email, String soDienThoai,int vaiTro) {
+
+    public Admin(int maAdmin, String taiKhoan, String matKhau, String hoTen, String email, String soDienThoai) {
         this.maAdmin = maAdmin;
         this.taiKhoan = taiKhoan;
         this.matKhau = matKhau;
         this.hoTen = hoTen;
         this.email = email;
         this.soDienThoai = soDienThoai;
-        this.vaiTro= vaiTro;
+//        this.vaiTro= vaiTro;
     }
 
     public Admin() {
@@ -89,13 +89,6 @@ public class Admin {
         this.soDienThoai = soDienThoai;
     }
 
-	public int getVaiTro() {
-		return vaiTro;
-	}
 
-	public void setVaiTro(int vaiTro) {
-		this.vaiTro = vaiTro;
-	}
-    
     
 }

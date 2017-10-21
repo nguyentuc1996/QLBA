@@ -31,11 +31,11 @@ public class BenhNhan {
     private String soTheBHYT;
     private String queQuan;
     private String ngheNghiep;
-    private int vaiTro;
+//    private int vaiTro;
     public BenhNhan() {
     }
 
-    public BenhNhan(int maBenhNhan, String taiKhoan, String matKhau, String hoTen, Date ngaySinh, int gioiTinh, String quocTich, String noiOHienTai, String email, String soDienThoai, String soCMND, String soTheBHYT, String queQuan, String ngheNghiep,int vaiTro) {
+    public BenhNhan(int maBenhNhan, String taiKhoan, String matKhau, String hoTen, Date ngaySinh, int gioiTinh, String quocTich, String noiOHienTai, String email, String soDienThoai, String soCMND, String soTheBHYT, String queQuan, String ngheNghiep) {
         this.maBenhNhan = maBenhNhan;
         this.taiKhoan = taiKhoan;
         this.matKhau = matKhau;
@@ -50,7 +50,7 @@ public class BenhNhan {
         this.soTheBHYT = soTheBHYT;
         this.queQuan = queQuan;
         this.ngheNghiep = ngheNghiep;
-        this.vaiTro= vaiTro;
+//        this.vaiTro= vaiTro;
     }
 
     public int getMaBenhNhan() {
@@ -167,13 +167,6 @@ public class BenhNhan {
         this.ngheNghiep = ngheNghiep;
     }
 
-	public int getVaiTro() {
-		return vaiTro;
-	}
-
-	public void setVaiTro(int vaiTro) {
-		this.vaiTro = vaiTro;
-	}
 
 
 }
