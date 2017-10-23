@@ -2,6 +2,8 @@ package dao;
 
 import java.util.ArrayList;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import Util.HibernateUtil;
@@ -91,5 +93,27 @@ public class BenhAnDAO {
 		}
 		return list;
 	}
+	
+	// get danh sach benh an theo ma benh nhan
+	public ArrayList<BenhAn> layDanhSachBenhAnTheoBenhNhan(int maBenhNhan){
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = null;
+		ArrayList<BenhAn> list = null;
+		try {
+			transaction = session.beginTransaction();
+			String hql = "SELECT BA FROM BenhAn BA"
+					+ " Where  BA.maBenhNhan =:id";			
+			Query query = session.createQuery(hql);
+			query.setParameter("id", maBenhNhan);
+			list =  (ArrayList<BenhAn>) query.getResultList();// lay phan tu dau cua mang
+			System.out.println(" Get OK");
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return list;
+	}
+	
 
 }
