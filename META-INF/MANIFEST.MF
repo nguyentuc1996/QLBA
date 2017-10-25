@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: QLBA
+Bundle-SymbolicName: QLBA
+Bundle-Version: 1.0.0.qualifier
+Export-Package: Util,
+ controller,
+ dao,
+ entities

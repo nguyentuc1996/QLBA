@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import dao.BacSiDAO;
 import dao.BenhAnDAO;
 import entities.BacSi;
 import entities.BenhAn;
@@ -22,7 +23,7 @@ import entities.BenhAn;
 @RequestMapping(value = "/bac_si")
 public class BacSiController {
 
-	BenhAnDAO benhAnDAO = new BenhAnDAO();
+	private BenhAnDAO benhAnDAO = new BenhAnDAO();
 
 	@RequestMapping(value = "/quan_ly_benh_an", method = RequestMethod.GET)
 	public String manageUserSkill(HttpServletRequest request, HttpServletResponse response, ModelMap mm)
@@ -134,5 +135,43 @@ public class BacSiController {
 //		response.sendRedirect(request.getContextPath() + "/user/home_certificate.html?userID=" + userID);
 		return "quan_ly_benh_an";
 	}
+	private BacSiDAO bacSiDAO = new BacSiDAO();
+	  @RequestMapping(value="/suathongtin",method=RequestMethod.POST)
+	  public void suaThongTin(HttpServletRequest request, HttpServletResponse response, ModelMap mm)
+			  throws IOException,ParseException{
+	        String maBacSy=request.getParameter("maBacSy");
+	        String taiKhoan=request.getParameter("taiKhoan");
+	        String matKhau=request.getParameter("matKhau");
+	        String hoTen=request.getParameter("hoTen");
+	        String ngaySinhStr=request.getParameter("ngaySinh");
+	        String gioiTinh=request.getParameter("gioiTinh");
+	        String quocTich=request.getParameter("quocTich");
+	        String noiOHienTai=request.getParameter("noiOHienTai");
+	        String email=request.getParameter("email");
+	        String soDienThoai=request.getParameter("soDienThoai");
+	        String soCMND=request.getParameter("soCMND");
+	        String queQuan=request.getParameter("queQuan");
+	        String namKinhNghiem=request.getParameter("namKinhNghiem");
+	        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+
+	        Date ngaySinh = sdf.parse(ngaySinhStr);
+	        BacSi bacSi = new BacSi(Integer.parseInt(maBacSy), taiKhoan, matKhau, hoTen, ngaySinh,
+	        		Integer.parseInt(gioiTinh), quocTich, noiOHienTai, email,
+	        		soDienThoai, soCMND, queQuan, Integer.parseInt(namKinhNghiem));
+	        //
+	        bacSiDAO.suaBacSi(bacSi);
+	        response.sendRedirect(request.getContextPath()+"/qlba/sua_tt.html");
+	  }
+	  @RequestMapping(value="/laythongtin",method=RequestMethod.GET)
+	  public String layThongTin(HttpServletRequest request, HttpServletResponse response, ModelMap mm)
+			  throws IOException,ParseException{
+	        // get ma BacSi by session
+	        String maBacSi = request.getParameter("maBacSi");
+	        BacSi bacSi = bacSiDAO.layThongTinBacSi(Integer.parseInt(maBacSi));
+	        mm.put("bacSi", bacSi);
+	    		// response.sendRedirect(request.getContextPath() + "/qlba/lay_ttbs.html");
+	        return "thongtinbacsi";
+	  }
 
 }
